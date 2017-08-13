@@ -5,9 +5,9 @@ import os
 import logging
 
 
-def get_request_response(url):
+def head_request_response(url):
 	session = requests.Session()
-	response = session.get(url, timeout=60)	
+	response = session.head(url, timeout=60)	
 	session.close()
 	return response
 
@@ -65,7 +65,7 @@ if __name__ == '__main__':
 	for url in urls[start:end]:
 		page_count +=1
 		try:
-			response = get_request_response(url)
+			response = head_request_response(url)
 			
 			if response.ok:
 				logging.info('Page [%d/%d][%s] check is [SUCCEED]' % (page_count+start, counter, url))

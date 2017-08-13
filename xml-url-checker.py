@@ -81,5 +81,5 @@ if __name__ == '__main__':
 		
 		logging.info('Pages count [%d] and [%d] are SUCCEED and [%d] are FAILED and [%d] are NOT TESTED' %(page_count, succeed, failed, not_tested))
 
-	if main_urls_not_tested_dict[server]:logging.warning('Not Tested URLs:' + str(main_urls_not_tested_dict[server]))
-	if main_urls_failed_dict[server]:logging.error('Failed URLs:' + str(main_urls_failed_dict[server]))
+	if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
+	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
