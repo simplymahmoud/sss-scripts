@@ -7,7 +7,7 @@ import logging
 
 def get_request_response(url):
 	session = requests.Session()
-	response = session.get(url, timeout=60)	
+	response = session.get(url, timeout=30, allow_redirects=False)	
 	session.close()
 	return response
 
