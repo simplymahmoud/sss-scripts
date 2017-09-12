@@ -137,12 +137,15 @@ if __name__ == '__main__':
 	counter = 0
 	failed_skus = []
 	not_found_skus = []
+	previous_sku = ''
 	for inriver_line in inriver_lines:
 		counter += 1
 		logging.info('Processing inriver line [%d/%d]' %(counter, inriver_lines_counter))	
 		inriver_sku = get_sku_from_inriver_line(inriver_line=inriver_line)
+		if inriver_sku == previous_sku:
+			continue
 		logging.info('Found SKU is [%s]' %(inriver_sku))
-		
+		previous_sku = inriver_sku
 		prices_line = get_prices_line_using_sku(prices_lines=prices_lines, sku=inriver_sku)	
 		if prices_line == []: 
 			logging.error('SKU %s [NOT FOUND]' %inriver_sku)
@@ -150,7 +153,7 @@ if __name__ == '__main__':
 			continue
 		prices_line[-1] = prices_line[-1].replace('\n','')	
 		if compare_inriver_line_with_prices_line(inriver_line, prices_line):
-			logging.info('SKU %s [Succeed]' %inriver_sku)
+			logging.info('SKU %s [Succeed]' %inriver_sku)			
 		else:
 			logging.info('Comparing items from revier line {%s} with prices line {%s}' %(inriver_line, prices_line))
 			logging.error('SKU %s [Failed]' %inriver_sku)

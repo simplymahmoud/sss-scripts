@@ -3,7 +3,11 @@ import requests
 import time
 import os
 import logging
+import urllib
 
+
+def get_xml_sitemap_file(file_name):
+	urllib.urlretrieve("https://sssports.com/pub/sitemap/" + file_name, file_name)
 
 def get_request_response(url):
 	session = requests.Session()
@@ -27,10 +31,13 @@ def get_site_urls_list(file_path):
 
 if __name__ == '__main__':
 	if len(argv) < 2:
-		raise AssertionError("Usage: python xml-url-plp-empty.py sitemap.xml start[optional] end[optional] ... ex. python xml-url-plp-empty.py en-ae.xml 500 1000")
+		raise AssertionError("Usage: python xml-url-plp-empty.py sitemap.xml start[optional] end[optional] ... ex. python xml-url-plp-empty.py sitemap_ae_en.xml 0 500")
 	
 	server = argv[1]
 	file_path = os.path.abspath(server)
+
+	if not os.path.isfile(file_path): 
+		get_xml_sitemap_file(file_name=server)
 	
 	start = 0
 	if len(argv) > 2:
@@ -49,13 +56,12 @@ if __name__ == '__main__':
 	main_urls_not_tested_dict = {}
 	main_urls_not_tested_dict[server] = []
 
-	succeed = 0
-	failed = 0
-	not_tested = 0
-	page_count = 0
-	empty = 0
-
 	empty_categories = []
+	coming_soon_image = []
+
+	succeed = 0
+	page_count = 0
+	
 	if not os.path.exists('logs'):
 		os.mkdir('logs')
 	log_path = os.path.abspath('logs')
@@ -70,23 +76,28 @@ if __name__ == '__main__':
 			response = get_request_response(url)
 			
 			if response.ok:
-				logging.info('Page [%d/%d][%s] check is [SUCCEED]' % (page_count+start, end, url))
+				logging.info('Category [%d/%d][%s] check is [SUCCEED]' % (page_count+start, end, url))
 				succeed +=1
 				if "We can't find products" in response.text:
-					empty +=1
-					logging.error('Empty category in url [%s]' % url)
+					logging.error('Empty category in url [%s] [EMPTY]' % url)
 					empty_categories.append(url)
+				#elif "d_coming-soon.jpg/media/catalog/product\d" in response.text:
+				else:
+					text = re.compile(r"d_coming-soon.jpg/media/catalog/product\d+")
+					if hasattr(response.text, 'group'):
+						logging.error('Category in url [%s] has image coming-soon.jpg [COMING SOON]' % url)
+						coming_soon_image.append(url)
+
 			else:
-				logging.error('Page [%d/%d][%s] check is [FAILED]' %(page_count+start, end, url))
-				failed +=1
+				logging.error('Category [%d/%d][%s] check is [FAILED]' %(page_count+start, end, url))
 				main_urls_failed_dict[server].append(url)
 		except:
-				logging.warning('Page [%d/%d][%s] check is [NOT TESTED]' %(page_count+start, end, url))
-				not_tested +=1
+				logging.warning('Category [%d/%d][%s] check is [NOT TESTED]' %(page_count+start, end, url))
 				main_urls_not_tested_dict[server].append(url)	
 		
-		logging.info('Pages count [%d] and [%d] are SUCCEED and [%d] are FAILED and [%d] are NOT TESTED and [%d] are EMPTY' %(page_count, succeed, failed, not_tested, empty))
+		logging.info('Count %d; %d are SUCCEED, %d are FAILED, %d are NOT TESTED, %d are EMPTY, and %d having COMING SOON image' %(page_count, succeed, len(main_urls_failed_dict[server]), len(main_urls_not_tested_dict[server]), len(empty_categories), len(coming_soon_image)))
 
-	if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(not_tested, str(main_urls_not_tested_dict[server])))
-	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(failed, str(main_urls_failed_dict[server])))
-	if empty_categories: logging.error('Empty Categories [%d] in URLs %s' % (empty, str(empty_categories)))
+	if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
+	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
+	if empty_categories: logging.error('Empty Categories [%d] in URLs %s' % (len(empty_categories), str(empty_categories)))
+	if coming_soon_image: logging.error('Categories with coming soon image [%d] in URLs %s' % (len(coming_soon_image), str(coming_soon_image)))
