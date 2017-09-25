@@ -5,9 +5,9 @@ import os
 import logging
 
 
-def head_request_response(url):
+def get_request_response(url):
 	session = requests.Session()
-	response = session.head(url, timeout=30, allow_redirects=False)
+	response = session.get(url, timeout=30, allow_redirects=False)	
 	session.close()
 	return response
 
@@ -16,18 +16,15 @@ def get_site_urls_list(file_path):
 	data = input.readlines()
 	temp_urls = [url.replace('<url><loc>', '') for url in data if url.count('<loc>')]
 	urls = []
-	for temp_url in temp_urls:
-		temp_list = temp_url.split('</loc>')
-		for temp_item in temp_list:
-			if temp_item.count('https://') and len(temp_item) < 200:
-				urls.append(temp_item)
+	for temp_url in temp_urls:		
+		urls.append(temp_url.split('</loc>')[0])
 
 	return urls
 
 
 if __name__ == '__main__':
 	if len(argv) < 2:
-		raise AssertionError("Usage: python xml-url-checker.py sitemap.xml start[optional] end[optional] ... ex. python xml-url-checker.py en-ae.xml 500 1000")
+		raise AssertionError("Usage: python xml-url-getter.py sitemap.xml start[optional] end[optional] ... ex. python xml-url-getter.py en-ae.xml 500 1000")
 	
 	server = argv[1]
 	file_path = os.path.abspath(server)
@@ -57,7 +54,7 @@ if __name__ == '__main__':
 	if not os.path.exists('logs'):
 		os.mkdir('logs')
 	log_path = os.path.abspath('logs')
-	log_file = os.path.join(log_path, server + '-checker-' + str(time.time()) + '.log')
+	log_file = os.path.join(log_path, server + '-getter-' + str(time.time()) + '.log')
 	logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', datefmt='%d/%m/%Y %I:%M:%S %p', filename=log_file,level=logging.DEBUG)
 	logging.info('Health check on server [%s] sitemap' %server)
 	logging.info('Found [%d] page in [%s]' %(counter, server))
@@ -65,7 +62,7 @@ if __name__ == '__main__':
 	for url in urls[start:end]:
 		page_count +=1
 		try:
-			response = head_request_response(url)
+			response = get_request_response(url)
 			
 			if response.ok:
 				logging.info('Page [%d/%d][%s] check is [SUCCEED]' % (page_count+start, counter, url))

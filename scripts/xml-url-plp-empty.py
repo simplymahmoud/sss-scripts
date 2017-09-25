@@ -20,11 +20,8 @@ def get_site_urls_list(file_path):
 	data = input.readlines()
 	temp_urls = [url.replace('<url><loc>', '') for url in data if url.count('<loc>')]
 	urls = []
-	for temp_url in temp_urls:
-		temp_list = temp_url.split('</loc>')
-		for temp_item in temp_list:
-			if temp_item.count('https://') and len(temp_item) < 200:
-				urls.append(temp_item)
+	for temp_url in temp_urls:		
+		urls.append(temp_url.split('</loc>')[0])
 
 	return urls
 
@@ -57,7 +54,6 @@ if __name__ == '__main__':
 	main_urls_not_tested_dict[server] = []
 
 	empty_categories = []
-	coming_soon_image = []
 
 	succeed = 0
 	page_count = 0
@@ -65,7 +61,7 @@ if __name__ == '__main__':
 	if not os.path.exists('logs'):
 		os.mkdir('logs')
 	log_path = os.path.abspath('logs')
-	log_file = os.path.join(log_path, server + '-getter-' + str(time.time()) + '.log')
+	log_file = os.path.join(log_path, server + '-plp-empty-' + str(time.time()) + '.log')
 	logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', datefmt='%d/%m/%Y %I:%M:%S %p', filename=log_file,level=logging.DEBUG)
 	logging.info('Health check on server [%s] sitemap' %server)
 	logging.info('Found [%d] page in [%s]' %(counter, server))
@@ -81,13 +77,6 @@ if __name__ == '__main__':
 				if "We can't find products" in response.text:
 					logging.error('Empty category in url [%s] [EMPTY]' % url)
 					empty_categories.append(url)
-				#elif "d_coming-soon.jpg/media/catalog/product\d" in response.text:
-				else:
-					text = re.compile(r"d_coming-soon.jpg/media/catalog/product\d+")
-					if hasattr(response.text, 'group'):
-						logging.error('Category in url [%s] has image coming-soon.jpg [COMING SOON]' % url)
-						coming_soon_image.append(url)
-
 			else:
 				logging.error('Category [%d/%d][%s] check is [FAILED]' %(page_count+start, end, url))
 				main_urls_failed_dict[server].append(url)
@@ -95,9 +84,8 @@ if __name__ == '__main__':
 				logging.warning('Category [%d/%d][%s] check is [NOT TESTED]' %(page_count+start, end, url))
 				main_urls_not_tested_dict[server].append(url)	
 		
-		logging.info('Count %d; %d are SUCCEED, %d are FAILED, %d are NOT TESTED, %d are EMPTY, and %d having COMING SOON image' %(page_count, succeed, len(main_urls_failed_dict[server]), len(main_urls_not_tested_dict[server]), len(empty_categories), len(coming_soon_image)))
+		logging.info('Count %d; %d are SUCCEED, %d are FAILED, %d are NOT TESTED, and %d are EMPTY' %(page_count, succeed, len(main_urls_failed_dict[server]), len(main_urls_not_tested_dict[server]), len(empty_categories)))
 
 	if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
 	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
 	if empty_categories: logging.error('Empty Categories [%d] in URLs %s' % (len(empty_categories), str(empty_categories)))
-	if coming_soon_image: logging.error('Categories with coming soon image [%d] in URLs %s' % (len(coming_soon_image), str(coming_soon_image)))

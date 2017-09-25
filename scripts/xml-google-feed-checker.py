@@ -16,10 +16,13 @@ def get_site_urls_list(file_path):
 	lines = input.readlines()
 	urls = []
 	for line in lines:
-		if '<producturl><![CDATA[' in line:
-			product_url = line.split('<producturl><![CDATA[')[1].split(']]></producturl>')[0]			
-		elif '<price>' in line:
-			product_price = str(line.split('<price>')[1].split('</price>')[0].split('.')[0].replace(',', '') )
+		if '<link><![CDATA[' in line:
+			product_url = line.split('<link><![CDATA[')[1].split(']]></link><description>')[0]			
+		elif '<g:price>' in line:
+			if '<g:sale_price>' in line:
+				product_price = str(line.split('<g:sale_price>')[1].split('</g:sale_price>')[0].split('.')[0].replace(',', '') )
+			else:
+				product_price = str(line.split('<g:price>')[1].split('</g:price>')[0].split('.')[0].replace(',', '') )
 			urls.append([product_url, product_price])
 	return urls
 
@@ -39,7 +42,7 @@ def get_price_values_from_page_response(response):
 
 if __name__ == '__main__':
 	if len(argv) < 2:
-		raise AssertionError("Usage: python xml-criteo-feed-checker.py sitemap.xml start[optional] end[optional] ... ex. python xxml-criteo-feed-checker.py criteo_feed_en_ae.xml 500 1000")
+		raise AssertionError("Usage: python xml-google-feed-checker.py sitemap.xml start[optional] end[optional] ... ex. python xml-google-feed-checker.py google_feed_en_ae.xml 500 1000")
 	
 	server = argv[1]
 	file_path = os.path.abspath(server)
@@ -70,7 +73,7 @@ if __name__ == '__main__':
 	if not os.path.exists('logs'):
 		os.mkdir('logs')
 	log_path = os.path.abspath('logs')
-	log_file = os.path.join(log_path, server + '-criteo-feed-' + str(time.time()) + '.log')
+	log_file = os.path.join(log_path, server + '-google-feed-' + str(time.time()) + '.log')
 	logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', datefmt='%d/%m/%Y %I:%M:%S %p', filename=log_file,level=logging.DEBUG)
 	logging.info('Health check on server [%s] riteo feed sitemap' %server)
 	logging.info('Found [%d] page in [%s]' %(counter, server))
@@ -99,6 +102,13 @@ if __name__ == '__main__':
 				main_urls_not_tested_dict[server].append(url[0])	
 		
 		logging.info('Pages count [%d] and [%d] are SUCCEED and [%d] are FAILED and [%d] are NOT TESTED and [%d] are MISMATCH' %(page_count, succeed, len(main_urls_failed_dict[server]), len(main_urls_not_tested_dict[server]), len(main_urls_price_failed_dict[server])))
+
+		if page_count%100 == 0:
+			if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
+			if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
+			if main_urls_price_failed_dict[server]:
+				logging.error('Failed prices [%d] Details;' % len(main_urls_price_failed_dict[server]))
+				[logging.info(line) for line in main_urls_price_failed_dict[server]]
 
 	if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
 	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
