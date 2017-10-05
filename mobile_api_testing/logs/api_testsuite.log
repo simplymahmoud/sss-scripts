@@ -1,95 +1,260 @@
-24/09/2017 01:27:45 PM [TestCase-2] [INFO] Testcase test001_get_attributes Started at 1506245265.14
-24/09/2017 01:27:45 PM [TestCase-2] [INFO] test001_get_attributes STARTED
-24/09/2017 01:27:47 PM [TestCase-2] [INFO] #. Get /attributes, should succeed
-24/09/2017 01:27:47 PM [TestCase-2] [INFO] test001_get_attributes ENDED
-24/09/2017 01:27:47 PM [TestCase-2] [INFO] Testcase test001_get_attributes Execution Time is 2.02199983597 sec.
-24/09/2017 01:27:47 PM [TestCase-3] [INFO] Testcase test002_get_attribute Started at 1506245267.17
-24/09/2017 01:27:47 PM [TestCase-3] [INFO] test002_get_attribute STARTED
-24/09/2017 01:27:47 PM [TestCase-3] [INFO] #. Get /attributes/{id}, should succeed
-24/09/2017 01:27:47 PM [TestCase-3] [INFO] test002_get_attribute ENDED
-24/09/2017 01:27:47 PM [TestCase-3] [INFO] Testcase test002_get_attribute Execution Time is 0.524000167847 sec.
-24/09/2017 01:27:47 PM [TestCase-1] [INFO] Testcase test001_get_client_token Started at 1506245267.7
-24/09/2017 01:27:47 PM [TestCase-1] [INFO] test001_get_client_token STARTED
-24/09/2017 01:27:48 PM [TestCase-1] [INFO] #. Get /oauth/token using user token, should succeed
-24/09/2017 01:27:48 PM [TestCase-1] [INFO] test001_get_client_token ENDED
-24/09/2017 01:27:48 PM [TestCase-1] [INFO] Testcase test001_get_client_token Execution Time is 0.716000080109 sec.
-24/09/2017 01:27:48 PM [TestCase-2] [INFO] Testcase test001_get_blocks Started at 1506245268.41
-24/09/2017 01:27:48 PM [TestCase-2] [INFO] test001_get_blocks STARTED
-24/09/2017 01:27:49 PM [TestCase-2] [INFO] #. Get /blocks, should succeed
-24/09/2017 01:27:49 PM [TestCase-2] [INFO] test001_get_blocks ENDED
-24/09/2017 01:27:49 PM [TestCase-2] [INFO] Testcase test001_get_blocks Execution Time is 0.625999927521 sec.
-24/09/2017 01:27:49 PM [TestCase-3] [INFO] Testcase test002_get_block Started at 1506245269.04
-24/09/2017 01:27:49 PM [TestCase-3] [INFO] test002_get_block STARTED
-24/09/2017 01:27:49 PM [TestCase-3] [INFO] #. Get /blocks/{id}, should succeed
-24/09/2017 01:27:49 PM [TestCase-3] [INFO] test002_get_block ENDED
-24/09/2017 01:27:49 PM [TestCase-3] [INFO] Testcase test002_get_block Execution Time is 0.504999876022 sec.
-24/09/2017 01:27:49 PM [TestCase-4] [INFO] Testcase test001_get_brands Started at 1506245269.55
-24/09/2017 01:27:49 PM [TestCase-4] [INFO] test001_get_brands STARTED
-24/09/2017 01:27:50 PM [TestCase-4] [INFO] #. Get /brands, should succeed
-24/09/2017 01:27:50 PM [TestCase-4] [INFO] test001_get_brands ENDED
-24/09/2017 01:27:50 PM [TestCase-4] [INFO] Testcase test001_get_brands Execution Time is 0.608000040054 sec.
-24/09/2017 01:27:50 PM [TestCase-5] [INFO] Testcase test002_get_brand Started at 1506245270.15
-24/09/2017 01:27:50 PM [TestCase-5] [INFO] test002_get_brand STARTED
-24/09/2017 01:27:50 PM [TestCase-5] [INFO] #. Get /brands/{id}, should succeed
-24/09/2017 01:27:50 PM [TestCase-5] [INFO] test002_get_brand ENDED
-24/09/2017 01:27:50 PM [TestCase-5] [INFO] Testcase test002_get_brand Execution Time is 0.486999988556 sec.
-24/09/2017 01:27:50 PM [TestCase-6] [INFO] Testcase test001_get_categories Started at 1506245270.64
-24/09/2017 01:27:50 PM [TestCase-6] [INFO] test001_get_categories STARTED
-24/09/2017 01:27:51 PM [TestCase-6] [INFO] #. Get /categories, should succeed
-24/09/2017 01:27:51 PM [TestCase-6] [INFO] test001_get_categories ENDED
-24/09/2017 01:27:51 PM [TestCase-6] [INFO] Testcase test001_get_categories Execution Time is 0.625 sec.
-24/09/2017 01:27:51 PM [TestCase-7] [INFO] Testcase test002_get_category Started at 1506245271.27
-24/09/2017 01:27:51 PM [TestCase-7] [INFO] test002_get_category STARTED
-24/09/2017 01:27:51 PM [TestCase-7] [INFO] #. Get /categories/{id}, should succeed
-24/09/2017 01:27:51 PM [TestCase-7] [INFO] test002_get_category ENDED
-24/09/2017 01:27:51 PM [TestCase-7] [INFO] Testcase test002_get_category Execution Time is 0.500999927521 sec.
-24/09/2017 01:27:51 PM [TestCase-8] [INFO] Testcase test001_get_files Started at 1506245271.77
-24/09/2017 01:27:51 PM [TestCase-8] [INFO] test001_get_files STARTED
-24/09/2017 01:27:52 PM [TestCase-8] [INFO] #. Get /files, should succeed
-24/09/2017 01:27:52 PM [TestCase-8] [INFO] test001_get_files ENDED
-24/09/2017 01:27:52 PM [TestCase-8] [INFO] Testcase test001_get_files Execution Time is 0.523999929428 sec.
-24/09/2017 01:27:52 PM [TestCase-9] [INFO] Testcase test002_get_file Started at 1506245272.29
-24/09/2017 01:27:52 PM [TestCase-9] [INFO] test002_get_file STARTED
-24/09/2017 01:27:52 PM [TestCase-9] [INFO] #. Get /files/{id}, should succeed
-24/09/2017 01:27:52 PM [TestCase-9] [INFO] test002_get_file ENDED
-24/09/2017 01:27:52 PM [TestCase-9] [INFO] Testcase test002_get_file Execution Time is 0.519999980927 sec.
-24/09/2017 01:27:52 PM [TestCase-10] [INFO] Testcase test001_get_products Started at 1506245272.81
-24/09/2017 01:27:52 PM [TestCase-10] [INFO] test001_get_products STARTED
-24/09/2017 01:27:53 PM [TestCase-10] [INFO] #. Get /products, should succeed
-24/09/2017 01:27:53 PM [TestCase-10] [INFO] test001_get_products ENDED
-24/09/2017 01:27:53 PM [TestCase-10] [INFO] Testcase test001_get_products Execution Time is 0.534999847412 sec.
-24/09/2017 01:27:53 PM [TestCase-11] [INFO] Testcase test002_get_product Started at 1506245273.35
-24/09/2017 01:27:53 PM [TestCase-11] [INFO] test002_get_product STARTED
-24/09/2017 01:27:53 PM [TestCase-11] [INFO] #. Get /products/{id}, should succeed
-24/09/2017 01:27:53 PM [TestCase-11] [INFO] test002_get_product ENDED
-24/09/2017 01:27:53 PM [TestCase-11] [INFO] Testcase test002_get_product Execution Time is 0.510999917984 sec.
-24/09/2017 01:27:53 PM [TestCase-12] [INFO] Testcase test001_get_screens Started at 1506245273.87
-24/09/2017 01:27:53 PM [TestCase-12] [INFO] test001_get_screens STARTED
-24/09/2017 01:27:54 PM [TestCase-12] [INFO] #. Get /screens, should succeed
-24/09/2017 01:27:54 PM [TestCase-12] [INFO] test001_get_screens ENDED
-24/09/2017 01:27:54 PM [TestCase-12] [INFO] Testcase test001_get_screens Execution Time is 0.500999927521 sec.
-24/09/2017 01:27:54 PM [TestCase-13] [INFO] Testcase test002_get_screen Started at 1506245274.37
-24/09/2017 01:27:54 PM [TestCase-13] [INFO] test002_get_screen STARTED
-24/09/2017 01:27:54 PM [TestCase-13] [INFO] #. Get /screens/{id}, should succeed
-24/09/2017 01:27:54 PM [TestCase-13] [INFO] test002_get_screen ENDED
-24/09/2017 01:27:54 PM [TestCase-13] [INFO] Testcase test002_get_screen Execution Time is 0.520000219345 sec.
-24/09/2017 01:27:54 PM [TestCase-16] [INFO] Testcase test001_get_sli_search_with_results Started at 1506245274.89
-24/09/2017 01:27:54 PM [TestCase-16] [INFO] test001_get_sli_search_with_results STARTED
-24/09/2017 01:27:55 PM [TestCase-16] [INFO] #. Get SLI search, should succeed
-24/09/2017 01:27:55 PM [TestCase-16] [INFO] test001_get_sli_search_with_results ENDED
-24/09/2017 01:27:55 PM [TestCase-16] [INFO] Testcase test001_get_sli_search_with_results Execution Time is 0.555999994278 sec.
-24/09/2017 01:27:55 PM [TestCase-17] [INFO] Testcase test002_get_sli_search_without_results Started at 1506245275.45
-24/09/2017 01:27:55 PM [TestCase-17] [INFO] test002_get_sli_search_without_results STARTED
-24/09/2017 01:27:55 PM [TestCase-17] [INFO] #. Get SLI search, should succeed
-24/09/2017 01:27:55 PM [TestCase-17] [INFO] test002_get_sli_search_without_results ENDED
-24/09/2017 01:27:55 PM [TestCase-17] [INFO] Testcase test002_get_sli_search_without_results Execution Time is 0.514999866486 sec.
-24/09/2017 01:27:55 PM [TestCase-14] [INFO] Testcase test001_get_widgets Started at 1506245275.96
-24/09/2017 01:27:55 PM [TestCase-14] [INFO] test001_get_widgets STARTED
-24/09/2017 01:27:56 PM [TestCase-14] [INFO] #. Get /widgets, should succeed
-24/09/2017 01:27:56 PM [TestCase-14] [INFO] test001_get_widgets ENDED
-24/09/2017 01:27:56 PM [TestCase-14] [INFO] Testcase test001_get_widgets Execution Time is 0.483000040054 sec.
-24/09/2017 01:27:56 PM [TestCase-15] [INFO] Testcase test002_get_widget Started at 1506245276.45
-24/09/2017 01:27:56 PM [TestCase-15] [INFO] test002_get_widget STARTED
-24/09/2017 01:27:56 PM [TestCase-15] [INFO] #. Get /widgets/{id}, should succeed
-24/09/2017 01:27:56 PM [TestCase-15] [INFO] test002_get_widget ENDED
-24/09/2017 01:27:56 PM [TestCase-15] [INFO] Testcase test002_get_widget Execution Time is 0.538000106812 sec.
+05/10/2017 01:17:38 PM [TestCase-1] [INFO] Testcase test001_get_attributes Started at 1507195058.84
+05/10/2017 01:17:38 PM [TestCase-1] [INFO] test001_get_attributes STARTED
+05/10/2017 01:17:38 PM [TestCase-1] [INFO] GET https://api-staging.sssports.com/v1/attributes
+05/10/2017 01:17:39 PM [TestCase-1] [INFO] #. Get /attributes, should succeed
+05/10/2017 01:17:39 PM [TestCase-1] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:39 PM [TestCase-1] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:39 PM [TestCase-1] [INFO] test001_get_attributes ENDED
+05/10/2017 01:17:39 PM [TestCase-1] [INFO] Testcase test001_get_attributes Execution Time is 0.957000017166 sec.
+05/10/2017 01:17:39 PM [TestCase-2] [INFO] Testcase test002_get_attribute Started at 1507195059.8
+05/10/2017 01:17:39 PM [TestCase-2] [INFO] test002_get_attribute STARTED
+05/10/2017 01:17:39 PM [TestCase-2] [INFO] GET https://api-staging.sssports.com/v1/attributes/374
+05/10/2017 01:17:40 PM [TestCase-2] [INFO] #. Get /attributes/{id}, should succeed
+05/10/2017 01:17:40 PM [TestCase-2] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:40 PM [TestCase-2] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:40 PM [TestCase-2] [INFO] test002_get_attribute ENDED
+05/10/2017 01:17:40 PM [TestCase-2] [INFO] Testcase test002_get_attribute Execution Time is 0.546000003815 sec.
+05/10/2017 01:17:40 PM [TestCase-3] [INFO] Testcase test001_get_client_token Started at 1507195060.34
+05/10/2017 01:17:40 PM [TestCase-3] [INFO] test001_get_client_token STARTED
+05/10/2017 01:17:40 PM [TestCase-3] [INFO] GET TOKEN RESONSE with DATA: {u'client_secret': u'52KMXIPXIqSdoGXXSSu5Puhnta7u9GwvVctaswLA', u'grant_type': u'client_credentials', u'client_id': u'1'}
+05/10/2017 01:17:40 PM [TestCase-3] [INFO] #. Get /oauth/token using user token, should succeed
+05/10/2017 01:17:40 PM [TestCase-3] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:40 PM [TestCase-3] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:40 PM [TestCase-3] [INFO] test001_get_client_token ENDED
+05/10/2017 01:17:40 PM [TestCase-3] [INFO] Testcase test001_get_client_token Execution Time is 0.577000141144 sec.
+05/10/2017 01:17:40 PM [TestCase-4] [INFO] Testcase test001_get_blocks Started at 1507195060.92
+05/10/2017 01:17:40 PM [TestCase-4] [INFO] test001_get_blocks STARTED
+05/10/2017 01:17:40 PM [TestCase-4] [INFO] GET https://api-staging.sssports.com/v1/blocks
+05/10/2017 01:17:41 PM [TestCase-4] [INFO] #. Get /blocks, should succeed
+05/10/2017 01:17:41 PM [TestCase-4] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:41 PM [TestCase-4] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:41 PM [TestCase-4] [INFO] test001_get_blocks ENDED
+05/10/2017 01:17:41 PM [TestCase-4] [INFO] Testcase test001_get_blocks Execution Time is 0.871999979019 sec.
+05/10/2017 01:17:41 PM [TestCase-5] [INFO] Testcase test002_get_block Started at 1507195061.79
+05/10/2017 01:17:41 PM [TestCase-5] [INFO] test002_get_block STARTED
+05/10/2017 01:17:41 PM [TestCase-5] [INFO] GET https://api-staging.sssports.com/v1/blocks/110
+05/10/2017 01:17:42 PM [TestCase-5] [INFO] #. Get /blocks/{id}, should succeed
+05/10/2017 01:17:42 PM [TestCase-5] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:42 PM [TestCase-5] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:42 PM [TestCase-5] [INFO] test002_get_block ENDED
+05/10/2017 01:17:42 PM [TestCase-5] [INFO] Testcase test002_get_block Execution Time is 0.582000017166 sec.
+05/10/2017 01:17:42 PM [TestCase-6] [INFO] Testcase test001_get_brands Started at 1507195062.37
+05/10/2017 01:17:42 PM [TestCase-6] [INFO] test001_get_brands STARTED
+05/10/2017 01:17:42 PM [TestCase-6] [INFO] GET https://api-staging.sssports.com/v1/brands
+05/10/2017 01:17:43 PM [TestCase-6] [INFO] #. Get /brands, should succeed
+05/10/2017 01:17:43 PM [TestCase-6] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:43 PM [TestCase-6] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:43 PM [TestCase-6] [INFO] test001_get_brands ENDED
+05/10/2017 01:17:43 PM [TestCase-6] [INFO] Testcase test001_get_brands Execution Time is 0.634999990463 sec.
+05/10/2017 01:17:43 PM [TestCase-7] [INFO] Testcase test002_get_brand Started at 1507195063.01
+05/10/2017 01:17:43 PM [TestCase-7] [INFO] test002_get_brand STARTED
+05/10/2017 01:17:43 PM [TestCase-7] [INFO] GET https://api-staging.sssports.com/v1/brands/1
+05/10/2017 01:17:43 PM [TestCase-7] [INFO] #. Get /brands/{id}, should succeed
+05/10/2017 01:17:43 PM [TestCase-7] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:43 PM [TestCase-7] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:43 PM [TestCase-7] [INFO] test002_get_brand ENDED
+05/10/2017 01:17:43 PM [TestCase-7] [INFO] Testcase test002_get_brand Execution Time is 0.547999858856 sec.
+05/10/2017 01:17:43 PM [TestCase-8] [INFO] Testcase test001_get_categories Started at 1507195063.56
+05/10/2017 01:17:43 PM [TestCase-8] [INFO] test001_get_categories STARTED
+05/10/2017 01:17:43 PM [TestCase-8] [INFO] GET https://api-staging.sssports.com/v1/categories
+05/10/2017 01:17:44 PM [TestCase-8] [INFO] #. Get /categories, should succeed
+05/10/2017 01:17:44 PM [TestCase-8] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:44 PM [TestCase-8] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:44 PM [TestCase-8] [INFO] test001_get_categories ENDED
+05/10/2017 01:17:44 PM [TestCase-8] [INFO] Testcase test001_get_categories Execution Time is 0.62700009346 sec.
+05/10/2017 01:17:44 PM [TestCase-9] [INFO] Testcase test002_get_category Started at 1507195064.19
+05/10/2017 01:17:44 PM [TestCase-9] [INFO] test002_get_category STARTED
+05/10/2017 01:17:44 PM [TestCase-9] [INFO] GET https://api-staging.sssports.com/v1/categories/4
+05/10/2017 01:17:44 PM [TestCase-9] [INFO] #. Get /categories/{id}, should succeed
+05/10/2017 01:17:44 PM [TestCase-9] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:44 PM [TestCase-9] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:44 PM [TestCase-9] [INFO] test002_get_category ENDED
+05/10/2017 01:17:44 PM [TestCase-9] [INFO] Testcase test002_get_category Execution Time is 0.519000053406 sec.
+05/10/2017 01:17:44 PM [TestCase-10] [INFO] Testcase test001_get_charge Started at 1507195064.71
+05/10/2017 01:17:44 PM [TestCase-10] [INFO] test001_get_charge STARTED
+05/10/2017 01:17:44 PM [TestCase-10] [INFO] GET https://api-staging.sssports.com/v1/payments/charges/1
+05/10/2017 01:17:45 PM [TestCase-10] [INFO] #. Get /payments/charges/{id}, should succeed
+05/10/2017 01:17:45 PM [TestCase-10] [INFO] Testcase test001_get_charge Execution Time is 0.535000085831 sec.
+05/10/2017 01:17:45 PM [TestCase-11] [INFO] Testcase test001_get_deeplinks Started at 1507195065.24
+05/10/2017 01:17:45 PM [TestCase-11] [INFO] test001_get_deeplinks STARTED
+05/10/2017 01:17:45 PM [TestCase-11] [INFO] GET https://api-staging.sssports.com/v1/deeplinks?filter%5Brequest_path%5D=sports/all/adidas-ace-173-primemesh-firm-ground-football-shoe-adft-bb1762&filter%5Blocale%5D=en_AE
+05/10/2017 01:17:45 PM [TestCase-11] [INFO] #. Get /deeplinks, should succeed
+05/10/2017 01:17:45 PM [TestCase-11] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:45 PM [TestCase-11] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:45 PM [TestCase-11] [INFO] test001_get_deeplinks ENDED
+05/10/2017 01:17:45 PM [TestCase-11] [INFO] Testcase test001_get_deeplinks Execution Time is 0.516999959946 sec.
+05/10/2017 01:17:45 PM [TestCase-12] [INFO] Testcase test002_get_deeplink Started at 1507195065.76
+05/10/2017 01:17:45 PM [TestCase-12] [INFO] test002_get_deeplink STARTED
+05/10/2017 01:17:45 PM [TestCase-12] [INFO] GET https://api-staging.sssports.com/v1/deeplinks/38969115
+05/10/2017 01:17:46 PM [TestCase-12] [INFO] #. Get /blocks/{id}, should succeed
+05/10/2017 01:17:46 PM [TestCase-12] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:46 PM [TestCase-12] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:46 PM [TestCase-12] [INFO] test002_get_deeplink ENDED
+05/10/2017 01:17:46 PM [TestCase-12] [INFO] Testcase test002_get_deeplink Execution Time is 0.536000013351 sec.
+05/10/2017 01:17:46 PM [TestCase-13] [INFO] Testcase test001_get_files Started at 1507195066.3
+05/10/2017 01:17:46 PM [TestCase-13] [INFO] test001_get_files STARTED
+05/10/2017 01:17:46 PM [TestCase-13] [INFO] GET https://api-staging.sssports.com/v1/files
+05/10/2017 01:17:46 PM [TestCase-13] [INFO] #. Get /files, should succeed
+05/10/2017 01:17:46 PM [TestCase-13] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:46 PM [TestCase-13] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:46 PM [TestCase-13] [INFO] test001_get_files ENDED
+05/10/2017 01:17:46 PM [TestCase-13] [INFO] Testcase test001_get_files Execution Time is 0.519000053406 sec.
+05/10/2017 01:17:46 PM [TestCase-14] [INFO] Testcase test002_get_file Started at 1507195066.82
+05/10/2017 01:17:46 PM [TestCase-14] [INFO] test002_get_file STARTED
+05/10/2017 01:17:46 PM [TestCase-14] [INFO] GET https://api-staging.sssports.com/v1/files/1
+05/10/2017 01:17:47 PM [TestCase-14] [INFO] #. Get /files/{id}, should succeed
+05/10/2017 01:17:47 PM [TestCase-14] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:47 PM [TestCase-14] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:47 PM [TestCase-14] [INFO] test002_get_file ENDED
+05/10/2017 01:17:47 PM [TestCase-14] [INFO] Testcase test002_get_file Execution Time is 0.526999950409 sec.
+05/10/2017 01:17:47 PM [TestCase-15] [INFO] Testcase test001_get_menu_items Started at 1507195067.36
+05/10/2017 01:17:47 PM [TestCase-15] [INFO] test001_get_menu_items STARTED
+05/10/2017 01:17:47 PM [TestCase-15] [INFO] GET https://api-staging.sssports.com/v1/menu-items
+05/10/2017 01:17:49 PM [TestCase-15] [INFO] #. Get /menu-items, should succeed
+05/10/2017 01:17:49 PM [TestCase-15] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:49 PM [TestCase-15] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:49 PM [TestCase-15] [INFO] test001_get_menu_items ENDED
+05/10/2017 01:17:49 PM [TestCase-15] [INFO] Testcase test001_get_menu_items Execution Time is 1.98099994659 sec.
+05/10/2017 01:17:49 PM [TestCase-16] [INFO] Testcase test002_get_menu Started at 1507195069.34
+05/10/2017 01:17:49 PM [TestCase-16] [INFO] test002_get_menu STARTED
+05/10/2017 01:17:49 PM [TestCase-16] [INFO] GET https://api-staging.sssports.com/v1/menu-items/1
+05/10/2017 01:17:49 PM [TestCase-16] [INFO] #. Get /menu-items/{id}, should succeed
+05/10/2017 01:17:49 PM [TestCase-16] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:49 PM [TestCase-16] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:49 PM [TestCase-16] [INFO] test002_get_menu ENDED
+05/10/2017 01:17:49 PM [TestCase-16] [INFO] Testcase test002_get_menu Execution Time is 0.584000110626 sec.
+05/10/2017 01:17:49 PM [TestCase-17] [INFO] Testcase test001_get_menus Started at 1507195069.92
+05/10/2017 01:17:49 PM [TestCase-17] [INFO] test001_get_menus STARTED
+05/10/2017 01:17:49 PM [TestCase-17] [INFO] GET https://api-staging.sssports.com/v1/menus
+05/10/2017 01:17:50 PM [TestCase-17] [INFO] #. Get /menus, should succeed
+05/10/2017 01:17:50 PM [TestCase-17] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:50 PM [TestCase-17] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:50 PM [TestCase-17] [INFO] test001_get_menus ENDED
+05/10/2017 01:17:50 PM [TestCase-17] [INFO] Testcase test001_get_menus Execution Time is 0.523000001907 sec.
+05/10/2017 01:17:50 PM [TestCase-18] [INFO] Testcase test002_get_menu Started at 1507195070.45
+05/10/2017 01:17:50 PM [TestCase-18] [INFO] test002_get_menu STARTED
+05/10/2017 01:17:50 PM [TestCase-18] [INFO] GET https://api-staging.sssports.com/v1/menus/1
+05/10/2017 01:17:50 PM [TestCase-18] [INFO] #. Get /menus/{id}, should succeed
+05/10/2017 01:17:50 PM [TestCase-18] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:50 PM [TestCase-18] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:50 PM [TestCase-18] [INFO] test002_get_menu ENDED
+05/10/2017 01:17:50 PM [TestCase-18] [INFO] Testcase test002_get_menu Execution Time is 0.516999959946 sec.
+05/10/2017 01:17:50 PM [TestCase-19] [INFO] Testcase test001_get_order Started at 1507195070.97
+05/10/2017 01:17:50 PM [TestCase-19] [INFO] test001_get_order STARTED
+05/10/2017 01:17:50 PM [TestCase-19] [INFO] GET https://api-staging.sssports.com/v1/orders/1
+05/10/2017 01:17:51 PM [TestCase-19] [INFO] #. Get /orders/{id}, should succeed
+05/10/2017 01:17:51 PM [TestCase-19] [INFO] Testcase test001_get_order Execution Time is 0.525000095367 sec.
+05/10/2017 01:17:51 PM [TestCase-20] [INFO] Testcase test001_get_products Started at 1507195071.49
+05/10/2017 01:17:51 PM [TestCase-20] [INFO] test001_get_products STARTED
+05/10/2017 01:17:51 PM [TestCase-20] [INFO] GET https://api-staging.sssports.com/v1/products?filter%5Btype_id%5D=configurable&page%5Bsize%5D=1&filter%5Bhas_options%5D=1
+05/10/2017 01:17:52 PM [TestCase-20] [INFO] #. Get /products, should succeed
+05/10/2017 01:17:52 PM [TestCase-20] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:52 PM [TestCase-20] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:52 PM [TestCase-20] [INFO] test001_get_products ENDED
+05/10/2017 01:17:52 PM [TestCase-20] [INFO] Testcase test001_get_products Execution Time is 0.521999835968 sec.
+05/10/2017 01:17:52 PM [TestCase-21] [INFO] Testcase test002_get_product Started at 1507195072.01
+05/10/2017 01:17:52 PM [TestCase-21] [INFO] test002_get_product STARTED
+05/10/2017 01:17:52 PM [TestCase-21] [INFO] GET https://api-staging.sssports.com/v1/products/157414
+05/10/2017 01:17:52 PM [TestCase-21] [INFO] #. Get /products/{id}, should succeed
+05/10/2017 01:17:52 PM [TestCase-21] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:52 PM [TestCase-21] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:52 PM [TestCase-21] [INFO] test002_get_product ENDED
+05/10/2017 01:17:52 PM [TestCase-21] [INFO] Testcase test002_get_product Execution Time is 0.607000112534 sec.
+05/10/2017 01:17:52 PM [TestCase-22] [INFO] Testcase test001_get_regions Started at 1507195072.62
+05/10/2017 01:17:52 PM [TestCase-22] [INFO] test001_get_regions STARTED
+05/10/2017 01:17:52 PM [TestCase-22] [INFO] GET https://api-staging.sssports.com/v1/regions
+05/10/2017 01:17:56 PM [TestCase-22] [INFO] #. Get /regions, should succeed
+05/10/2017 01:17:56 PM [TestCase-22] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:56 PM [TestCase-22] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:56 PM [TestCase-22] [INFO] test001_get_regions ENDED
+05/10/2017 01:17:56 PM [TestCase-22] [INFO] Testcase test001_get_regions Execution Time is 3.6740000248 sec.
+05/10/2017 01:17:56 PM [TestCase-23] [INFO] Testcase test001_get_rules Started at 1507195076.3
+05/10/2017 01:17:56 PM [TestCase-23] [INFO] test001_get_rules STARTED
+05/10/2017 01:17:56 PM [TestCase-23] [INFO] GET https://api-staging.sssports.com/v1/rules
+05/10/2017 01:17:56 PM [TestCase-23] [INFO] #. Get /rules, should succeed
+05/10/2017 01:17:56 PM [TestCase-23] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:56 PM [TestCase-23] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:56 PM [TestCase-23] [INFO] test001_get_rules ENDED
+05/10/2017 01:17:56 PM [TestCase-23] [INFO] Testcase test001_get_rules Execution Time is 0.516999959946 sec.
+05/10/2017 01:17:56 PM [TestCase-24] [INFO] Testcase test002_get_rule Started at 1507195076.81
+05/10/2017 01:17:56 PM [TestCase-24] [INFO] test002_get_rule STARTED
+05/10/2017 01:17:56 PM [TestCase-24] [INFO] GET https://api-staging.sssports.com/v1/rules/7
+05/10/2017 01:17:57 PM [TestCase-24] [INFO] #. Get /rules/{id}, should succeed
+05/10/2017 01:17:57 PM [TestCase-24] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:57 PM [TestCase-24] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:57 PM [TestCase-24] [INFO] test002_get_rule ENDED
+05/10/2017 01:17:57 PM [TestCase-24] [INFO] Testcase test002_get_rule Execution Time is 0.515000104904 sec.
+05/10/2017 01:17:57 PM [TestCase-25] [INFO] Testcase test001_get_screens Started at 1507195077.33
+05/10/2017 01:17:57 PM [TestCase-25] [INFO] test001_get_screens STARTED
+05/10/2017 01:17:57 PM [TestCase-25] [INFO] GET https://api-staging.sssports.com/v1/screens
+05/10/2017 01:17:57 PM [TestCase-25] [INFO] #. Get /screens, should succeed
+05/10/2017 01:17:57 PM [TestCase-25] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:57 PM [TestCase-25] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:57 PM [TestCase-25] [INFO] test001_get_screens ENDED
+05/10/2017 01:17:57 PM [TestCase-25] [INFO] Testcase test001_get_screens Execution Time is 0.496000051498 sec.
+05/10/2017 01:17:57 PM [TestCase-26] [INFO] Testcase test002_get_screen Started at 1507195077.83
+05/10/2017 01:17:57 PM [TestCase-26] [INFO] test002_get_screen STARTED
+05/10/2017 01:17:57 PM [TestCase-26] [INFO] GET https://api-staging.sssports.com/v1/screens/1
+05/10/2017 01:17:58 PM [TestCase-26] [INFO] #. Get /screens/{id}, should succeed
+05/10/2017 01:17:58 PM [TestCase-26] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:58 PM [TestCase-26] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:58 PM [TestCase-26] [INFO] test002_get_screen ENDED
+05/10/2017 01:17:58 PM [TestCase-26] [INFO] Testcase test002_get_screen Execution Time is 0.519000053406 sec.
+05/10/2017 01:17:58 PM [TestCase-27] [INFO] Testcase test001_get_shops Started at 1507195078.34
+05/10/2017 01:17:58 PM [TestCase-27] [INFO] test001_get_shops STARTED
+05/10/2017 01:17:58 PM [TestCase-27] [INFO] GET https://api-staging.sssports.com/v1/shops
+05/10/2017 01:17:59 PM [TestCase-27] [INFO] #. Get /shops, should succeed
+05/10/2017 01:17:59 PM [TestCase-27] [INFO] #. Check response headers, should succeed
+05/10/2017 01:17:59 PM [TestCase-27] [INFO] #. Check response body, should succeed
+05/10/2017 01:17:59 PM [TestCase-27] [INFO] test001_get_shops ENDED
+05/10/2017 01:17:59 PM [TestCase-27] [INFO] Testcase test001_get_shops Execution Time is 1.35199999809 sec.
+05/10/2017 01:17:59 PM [TestCase-28] [INFO] Testcase test001_get_sli_search_with_results Started at 1507195079.7
+05/10/2017 01:17:59 PM [TestCase-28] [INFO] test001_get_sli_search_with_results STARTED
+05/10/2017 01:17:59 PM [TestCase-28] [INFO] GET SLI SEARCH for KEWORD: asics
+05/10/2017 01:18:00 PM [TestCase-28] [INFO] #. Get SLI search, should succeed
+05/10/2017 01:18:00 PM [TestCase-28] [INFO] #. Check response headers, should succeed
+05/10/2017 01:18:00 PM [TestCase-28] [INFO] #. Check response body, should succeed
+05/10/2017 01:18:00 PM [TestCase-28] [INFO] test001_get_sli_search_with_results ENDED
+05/10/2017 01:18:00 PM [TestCase-28] [INFO] Testcase test001_get_sli_search_with_results Execution Time is 0.796000003815 sec.
+05/10/2017 01:18:00 PM [TestCase-29] [INFO] Testcase test002_get_sli_search_without_results Started at 1507195080.49
+05/10/2017 01:18:00 PM [TestCase-29] [INFO] test002_get_sli_search_without_results STARTED
+05/10/2017 01:18:00 PM [TestCase-29] [INFO] GET SLI SEARCH for KEWORD: xx
+05/10/2017 01:18:01 PM [TestCase-29] [INFO] #. Get SLI search, should succeed
+05/10/2017 01:18:01 PM [TestCase-29] [INFO] #. Check response headers, should succeed
+05/10/2017 01:18:01 PM [TestCase-29] [INFO] #. Check response body, should succeed
+05/10/2017 01:18:01 PM [TestCase-29] [INFO] test002_get_sli_search_without_results ENDED
+05/10/2017 01:18:01 PM [TestCase-29] [INFO] Testcase test002_get_sli_search_without_results Execution Time is 0.589999914169 sec.
+05/10/2017 01:18:01 PM [TestCase-30] [INFO] Testcase test001_get_stores Started at 1507195081.1
+05/10/2017 01:18:01 PM [TestCase-30] [INFO] test001_get_stores STARTED
+05/10/2017 01:18:01 PM [TestCase-30] [INFO] GET https://api-staging.sssports.com/v1/stores
+05/10/2017 01:18:02 PM [TestCase-30] [INFO] #. Get /stores, should succeed
+05/10/2017 01:18:02 PM [TestCase-30] [INFO] #. Check response headers, should succeed
+05/10/2017 01:18:02 PM [TestCase-30] [INFO] #. Check response body, should succeed
+05/10/2017 01:18:02 PM [TestCase-30] [INFO] test001_get_stores ENDED
+05/10/2017 01:18:02 PM [TestCase-30] [INFO] Testcase test001_get_stores Execution Time is 0.962000131607 sec.
+05/10/2017 01:18:02 PM [TestCase-31] [INFO] Testcase test001_get_subscriptions Started at 1507195082.06
+05/10/2017 01:18:02 PM [TestCase-31] [INFO] test001_get_subscriptions STARTED
+05/10/2017 01:18:02 PM [TestCase-31] [INFO] GET https://api-staging.sssports.com/v1/payments/subscriptions/2?include=charges
+05/10/2017 01:18:02 PM [TestCase-31] [INFO] #. Get /subscriptions, should succeed
+05/10/2017 01:18:02 PM [TestCase-31] [INFO] Testcase test001_get_subscriptions Execution Time is 0.537999868393 sec.
+05/10/2017 01:18:02 PM [TestCase-32] [INFO] Testcase test001_get_widgets Started at 1507195082.6
+05/10/2017 01:18:02 PM [TestCase-32] [INFO] test001_get_widgets STARTED
+05/10/2017 01:18:02 PM [TestCase-32] [INFO] GET https://api-staging.sssports.com/v1/widgets
+05/10/2017 01:18:03 PM [TestCase-32] [INFO] #. Get /widgets, should succeed
+05/10/2017 01:18:03 PM [TestCase-32] [INFO] #. Check response headers, should succeed
+05/10/2017 01:18:03 PM [TestCase-32] [INFO] #. Check response body, should succeed
+05/10/2017 01:18:03 PM [TestCase-32] [INFO] test001_get_widgets ENDED
+05/10/2017 01:18:03 PM [TestCase-32] [INFO] Testcase test001_get_widgets Execution Time is 0.513999938965 sec.
+05/10/2017 01:18:03 PM [TestCase-33] [INFO] Testcase test002_get_widget Started at 1507195083.12
+05/10/2017 01:18:03 PM [TestCase-33] [INFO] test002_get_widget STARTED
+05/10/2017 01:18:03 PM [TestCase-33] [INFO] GET https://api-staging.sssports.com/v1/widgets/40
+05/10/2017 01:18:03 PM [TestCase-33] [INFO] #. Get /widgets/{id}, should succeed
+05/10/2017 01:18:03 PM [TestCase-33] [INFO] #. Check response headers, should succeed
+05/10/2017 01:18:03 PM [TestCase-33] [INFO] #. Check response body, should succeed
+05/10/2017 01:18:03 PM [TestCase-33] [INFO] test002_get_widget ENDED
+05/10/2017 01:18:03 PM [TestCase-33] [INFO] Testcase test002_get_widget Execution Time is 0.529000043869 sec.
+05/10/2017 01:18:03 PM [TestCase-34] [INFO] Testcase test001_get_home_page_widget Started at 1507195083.65
+05/10/2017 01:18:03 PM [TestCase-34] [INFO] test001_get_home_page_widget STARTED
+05/10/2017 01:18:03 PM [TestCase-34] [INFO] GET https://api-staging.sssports.com/v1/widgets/43/products/?page[number]=1&page[size]=8
+05/10/2017 01:18:04 PM [TestCase-34] [INFO] #. Get /widgets/43/products/?page[number]=1&page[size]=8, should succeed
+05/10/2017 01:18:04 PM [TestCase-34] [INFO] Testcase test001_get_home_page_widget Execution Time is 0.483999967575 sec.

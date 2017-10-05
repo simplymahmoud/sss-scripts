@@ -29,7 +29,8 @@ class BaseTest(TestCase):
             self.client_auth_header[cfg] = config['client_token'][cfg]
         self.user_auth_header = {}
         for cfg in config['user_token'].keys():
-            self.user_auth_header[cfg] = config['user_token'][cfg]        
+            self.user_auth_header[cfg] = config['user_token'][cfg]     
+        self.use_auth = config['main']['use_auth']
 
 
     def setUp(self):
@@ -40,6 +41,8 @@ class BaseTest(TestCase):
                                              {'testid': self.shortDescription().split(':')[0] or self._testID})
         self.lg('Testcase %s Started at %s' % (self._testID, self._startTime))
         self.session = requests.Session()
+        if self.use_auth == 'True':
+            self.add_bearer_auth_to_header()
 
 
     def tearDown(self):
@@ -57,23 +60,43 @@ class BaseTest(TestCase):
         
         
     def get_request_response(self, uri, headers=None, payload=None):
-        if headers: return self.session.get(self.url + uri, params=payload, headers=headers, timeout=30, allow_redirects=False)     
-        return self.session.get(self.url + uri, params=payload, timeout=30, allow_redirects=False)     
+        if headers == None: 
+            headers = {"Content-Type": "application/vnd.api+json"}
+        if hasattr(self, 'auth_header'):
+            headers['Authorization'] = self.auth_header
+        self.lg('GET %s' % self.url + uri)
+        return self.session.get(self.url + uri, params=payload, headers=headers, timeout=30, allow_redirects=False)     
 
 
     def post_request_response(self, uri, data, headers=None):  
-        if headers: return self.session.post(self.url + uri, data=data, headers=headers, timeout=30, allow_redirects=False)
-        return self.session.post(self.url + uri, data=data, timeout=30, allow_redirects=False)
+        if headers == None: 
+            headers = {"Content-Type": "application/vnd.api+json"}
+        if hasattr(self, 'auth_header'):
+            headers['Authorization'] = self.auth_header         
+        self.lg('POST %s' % self.url + uri)
+        return self.session.post(self.url + uri, data=data, headers=headers, timeout=30, allow_redirects=False)        
 
 
     def delete_request_response(self, uri, headers=None):      
-        if headers: return self.session.delete(self.url + uri, headers=headers, timeout=30, allow_redirects=False)
-        return self.session.delete(self.url + uri, timeout=30, allow_redirects=False)
+        if headers == None: 
+            headers = {"Content-Type": "application/vnd.api+json"}
+        if hasattr(self, 'auth_header'):
+            headers['Authorization'] = self.auth_header
+        self.lg('DELETE %s' % self.url + uri)
+        return self.session.delete(self.url + uri, headers=headers, timeout=30, allow_redirects=False)
     
     
     def get_token_response(self, data):
-        return self.session.post(self.environment_url + '/oauth/token', data=data)
+        self.lg('GET TOKEN RESONSE with DATA: %s' % data)
+        return self.session.post(self.environment_url + '/oauth/token', data=data)    
     
     
+    def add_bearer_auth_to_header(self):
+        response = self.get_token_response(self.client_auth_header)
+        self.auth_header = response.json()['token_type'] + ' ' + response.json()['access_token']    
+        self.lg('ADD BEARER AUTH to HEADER: %s' % self.auth_header)
+
+
     def get_sli_search(self, keyword):
+        self.lg('GET SLI SEARCH for KEWORD: %s' % keyword)
         return self.session.get('https://shop.sssports.com/search?w=%s&ts=json-full' % keyword, timeout=30, allow_redirects=False)
