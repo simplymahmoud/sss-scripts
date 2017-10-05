@@ -95,6 +95,11 @@ if __name__ == '__main__':
 		
 		logging.info('Pages count [%d] and [%d] are SUCCEED and [%d] are FAILED and [%d] are NOT TESTED and [%d] are EMPTY' %(page_count, succeed, failed, not_tested, empty))
 
+		if page_count%100 == 0:
+			if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(not_tested, str(main_urls_not_tested_dict[server])))
+			if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(failed, str(main_urls_failed_dict[server])))
+			if empty_categories: logging.error('Empty Categories [%d] in URLs %s' % (empty, str(empty_categories)))
+			
 	if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(not_tested, str(main_urls_not_tested_dict[server])))
 	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(failed, str(main_urls_failed_dict[server])))
 	if empty_categories: logging.error('Empty Categories [%d] in URLs %s' % (empty, str(empty_categories)))

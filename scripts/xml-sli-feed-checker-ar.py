@@ -154,7 +154,12 @@ if __name__ == '__main__':
 						main_urls_not_tested_dict[server].append(url['url'])					
 
 				logging.info('Pages count [%d] and [%d] are SUCCEED and [%d] are FAILED and [%d] are NOT TESTED and [%d] are MISMATCH' %(page_count, succeed, len(main_urls_failed_dict[server]), len(main_urls_not_tested_dict[server]), len(main_urls_price_failed_dict[server])))
-
+		
+		if page_count%100 == 0:
+			if main_urls_not_tested_dict.values():logging.warning('Not Tested URLs:%s' %(str(main_urls_not_tested_dict)))
+			if main_urls_failed_dict.values():logging.error('Failed URLs:%s' %(str(main_urls_failed_dict)))
+			if main_urls_price_failed_dict.values():logging.error('Failed prices details:%s' %( str(main_urls_price_failed_dict) ) )
+			
 	if main_urls_not_tested_dict.values():logging.warning('Not Tested URLs:%s' %(str(main_urls_not_tested_dict)))
 	if main_urls_failed_dict.values():logging.error('Failed URLs:%s' %(str(main_urls_failed_dict)))
 	if main_urls_price_failed_dict.values():logging.error('Failed prices details:%s' %( str(main_urls_price_failed_dict) ) )

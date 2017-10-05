@@ -104,6 +104,17 @@ if __name__ == '__main__':
 				main_urls_not_tested_dict[server].append(url)	
 		logging.info('Pages count [%d] and [%d] are SUCCEED and [%d] are pages with FAILED images' %(page_count, succeed, len(failed_images_dict.keys())))
 
+		if page_count%100 == 0:
+			if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
+			if failed_images_dict:
+				logging.info('============================')
+				logging.info('===========REPORT===========')
+				logging.info('============================')
+				logging.error('Number of pages has failed images are [%d] with details;' % len(failed_images_dict.keys()))
+				for url in failed_images_dict.keys():
+					logging.info('+++++++++++New URL++++++++++++')
+					logging.info('URL [%s] has [%d] failed images %s' % (url, len(failed_images_dict[url]), str(failed_images_dict[url])))			
+
 	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
 	if failed_images_dict:
 		logging.info('============================')

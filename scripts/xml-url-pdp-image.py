@@ -81,6 +81,11 @@ if __name__ == '__main__':
 		
 		logging.info('Count %d; %d are SUCCEED, %d are FAILED, %d are NOT TESTED, and %d are IMAGE MISMATCH' %(page_count, succeed, len(main_urls_failed_dict[server]), len(main_urls_not_tested_dict[server]), len(product_images)))
 
+		if page_count%100 == 0:
+			if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
+			if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
+			if product_images: logging.error('Images mismatch with xml [%d] in URLs %s' % (len(product_images), str(product_images)))				
+
 	if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
 	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
 	if product_images: logging.error('Images mismatch with xml [%d] in URLs %s' % (len(product_images), str(product_images)))

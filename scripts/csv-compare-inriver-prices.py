@@ -159,6 +159,15 @@ if __name__ == '__main__':
 			logging.error('SKU %s [Failed]' %inriver_sku)
 			failed_skus.append(inriver_sku)
 
+		if counter%100 == 0:
+			if not_found_skus:
+				logging.error('Not found SKUs are %s' %str(not_found_skus))
+
+			if failed_skus:
+				logging.error('Failed SKUs are %s' %str(failed_skus))
+				generate_csv_file_with_the_failed_skus(failed_skus)
+
+		
 	if not_found_skus:
 		logging.error('Not found SKUs are %s' %str(not_found_skus))
 

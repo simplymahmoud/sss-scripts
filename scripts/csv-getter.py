@@ -7,7 +7,7 @@ import logging
 
 def get_request_response(url):
 	session = requests.Session()
-	response = session.get(url, timeout=60)	
+	response = session.get(url, timeout=30, allow_redirects=False)	
 	session.close()
 	return response
 
@@ -76,6 +76,10 @@ if __name__ == '__main__':
 				main_urls_not_tested_dict[server].append(url)	
 		
 		logging.info('URLs count [%d] and [%d] are SUCCEED and [%d] are FAILED and [%d] are NOT TESTED' %(page_count, succeed, failed, not_tested))
+
+		if page_count%100 == 0:
+			if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
+			if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))			
 
 	if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
 	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))

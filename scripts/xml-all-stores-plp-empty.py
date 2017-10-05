@@ -85,7 +85,12 @@ if __name__ == '__main__':
 						main_urls_not_tested_dict[server].append(url)	
 				
 				logging.info('Pages count [%d] and [%d] are SUCCEED and [%d] are FAILED and [%d] are NOT TESTED and [%d] are EMPTY' %(page_count, succeed, len(main_urls_failed_dict[server]), len(main_urls_not_tested_dict[server]), len(main_urls_empty_dict[server])))
+				if page_count%100 == 0:
+					if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(not_tested, str(main_urls_not_tested_dict[server])))
+					if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(failed, str(main_urls_failed_dict[server])))
+					if main_urls_empty_dict[server]: logging.error('Empty Categories [%d] in URLs %s' % (len(main_urls_empty_dict[server]), str(main_urls_empty_dict[server])))
 
+					
 			if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(not_tested, str(main_urls_not_tested_dict[server])))
 			if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(failed, str(main_urls_failed_dict[server])))
 			if main_urls_empty_dict[server]: logging.error('Empty Categories [%d] in URLs %s' % (len(main_urls_empty_dict[server]), str(main_urls_empty_dict[server])))

@@ -106,6 +106,12 @@ if __name__ == '__main__':
 			logging.error('item number %s [Failed]' %inriver_item_number)
 			failed_skus.append(inriver_sku)
 
+			if counter%100 == 0:
+				if not_found_item_numbers:
+					logging.error('Not found item numbers are %s' %str(not_found_item_numbers))
+				if failed_item_numbers:
+					logging.error('Failed item numbers are %s' %str(failed_item_numbers))
+
 	if not_found_item_numbers:
 		logging.error('Not found item numbers are %s' %str(not_found_item_numbers))
 

@@ -81,29 +81,35 @@ if __name__ == '__main__':
 	
 	for url in urls[start:end]:
 		page_count +=1
-		#try:
-		response = get_request_response(url[0])
-		
-		if response.ok:
-			logging.info('Page [%d/%d][%s] check is [SUCCEED]' % ( page_count+start, counter, str(url[0]) ))
-			succeed +=1
-			prices = get_price_values_from_page_response(response)
-			if url[1] not in prices:
-				logging.error('Page [%d/%d][%s] check is [PRICE MISMATCH]' %(page_count+start, counter, str(url[0]) ))
-				logging.error('XML price is [%s] and product page price(s) are %s' %( str(url[1]), str(prices)))
-				main_urls_price_failed_dict[server].append('Page URL [%s] price(s) %s is not matching feeds price %s' % ( str(url[0]), str(prices), str(url[1]) ))
+		try:
+			response = get_request_response(url[0])
+			
+			if response.ok:
+				logging.info('Page [%d/%d][%s] check is [SUCCEED]' % ( page_count+start, counter, str(url[0]) ))
+				succeed +=1
+				prices = get_price_values_from_page_response(response)
+				if url[1] not in prices:
+					logging.error('Page [%d/%d][%s] check is [PRICE MISMATCH]' %(page_count+start, counter, str(url[0]) ))
+					logging.error('XML price is [%s] and product page price(s) are %s' %( str(url[1]), str(prices)))
+					main_urls_price_failed_dict[server].append('Page URL [%s] price(s) %s is not matching feeds price %s' % ( str(url[0]), str(prices), str(url[1]) ))
 
 
-		else:
-			logging.error('Page [%d/%d][%s] check is [FAILED]' %( page_count+start, counter, str(url[0]) ))
-			main_urls_failed_dict[server].append(url[0])
-		'''
+			else:
+				logging.error('Page [%d/%d][%s] check is [FAILED]' %( page_count+start, counter, str(url[0]) ))
+				main_urls_failed_dict[server].append(url[0])
 		except:
 				logging.warning('Page [%d/%d][%s] check is [NOT TESTED]' %( page_count+start, counter, str(url[0]) ))
 				main_urls_not_tested_dict[server].append(url[0])	
-		'''
+		
 		logging.info('Pages count [%d] and [%d] are SUCCEED and [%d] are FAILED and [%d] are NOT TESTED and [%d] are MISMATCH' %(page_count, succeed, len(main_urls_failed_dict[server]), len(main_urls_not_tested_dict[server]), len(main_urls_price_failed_dict[server])))
 
+		if page_count%100 == 0:
+			if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
+			if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
+			if main_urls_price_failed_dict[server]:
+				logging.error('Failed prices [%d] Details;' % len(main_urls_price_failed_dict[server]))
+				[logging.info(line) for line in main_urls_price_failed_dict[server]]
+		
 	if main_urls_not_tested_dict[server]:logging.warning('Not Tested [%d] URLs:%s' %(len(main_urls_not_tested_dict[server]), str(main_urls_not_tested_dict[server])))
 	if main_urls_failed_dict[server]:logging.error('Failed [%d] URLs:%s' %(len(main_urls_failed_dict[server]), str(main_urls_failed_dict[server])))
 	if main_urls_price_failed_dict[server]:
