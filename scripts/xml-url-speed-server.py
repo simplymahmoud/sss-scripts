@@ -7,7 +7,11 @@ import time
 import os
 import logging
 import datetime
+import urllib
 
+
+def get_xml_sitemap_file(file_name):
+	urllib.urlretrieve("https://sssports.com/pub/sitemap/" + file_name, file_name)
 
 def head_request_response(url):
 	session = requests.Session()
@@ -53,11 +57,12 @@ def generate_csv_file_with_speeds(urls_with_speed):
 	logging.info('Generating CSV with URL speeds [DONE].')
 
 if __name__ == '__main__':
-	if len(argv) < 2:
-		raise AssertionError("Usage: python xml-url-speed.py sitemap.xml start[optional] end[optional] ... ex. python xml-url-speed.py en-ae.xml 500 1000")
 	
-	server = argv[1]
+	server = 'sitemap_ae_en.xml'
 	file_path = os.path.abspath(server)
+
+	if not os.path.isfile(file_path): 
+		get_xml_sitemap_file(file_name=server)
 
 	start = 0
 	if len(argv) > 2:
