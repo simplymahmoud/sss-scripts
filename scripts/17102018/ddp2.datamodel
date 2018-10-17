@@ -1,0 +1,4621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model>
+   <strategyId>fixedlen</strategyId>
+   <id>
+      <part>DDP WI Direct Debit Payment - Multiple Records</part>
+   </id>
+   <description>Supported Records [XSI/XDI/+IP/-IP/+RI/-RI/+RF/-RF/XAG/XAB/XAP/+AP/+AR/-AR/+AF/-AF]</description>
+   <optionSet id="fixedlen" modelDefinitionType="definition">
+      <optionSet id="section">
+         <optionSet id="general">
+            <option id="name">file</option>
+            <option id="recordName">row</option>
+            <option id="recordSeparator">{crlf}</option>
+            <compoundOption id="recordOwner">
+               <option id="ownerType">fixedCount</option>
+               <option id="recordCount">1</option>
+            </compoundOption>
+         </optionSet>
+         <optionSequence id="components">
+            <optionSet id="section">
+               <optionSet id="general">
+                  <option id="name">file-header</option>
+                  <option id="recordName">file-header-row</option>
+                  <option id="recordSeparator">{crlf}</option>
+                  <compoundOption id="recordOwner">
+                     <option id="ownerType">fixedCount</option>
+                     <option id="recordCount">1</option>
+                  </compoundOption>
+               </optionSet>
+               <optionSequence id="components">
+                  <optionSet id="field">
+                     <option id="name">recordCategory</option>
+                     <option id="type">string</option>
+                     <option id="length">1</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">recordType</option>
+                     <option id="type">string</option>
+                     <option id="length">2</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">accountId</option>
+                     <option id="type">string</option>
+                     <option id="length">4</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">filename</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">filenameExtension</option>
+                     <option id="type">string</option>
+                     <option id="length">3</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">dateProduction</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">serialNumber</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">periodFrom</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">periodTo</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">filler</option>
+                     <option id="type">string</option>
+                     <option id="length">350</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+               </optionSequence>
+            </optionSet>
+            <optionSet id="section">
+               <optionSet id="general">
+                  <option id="name">batch-header</option>
+                  <option id="recordName">batch-header-row</option>
+                  <option id="recordSeparator">{crlf}</option>
+                  <compoundOption id="recordOwner">
+                     <option id="ownerType">fixedCount</option>
+                     <option id="recordCount">1</option>
+                  </compoundOption>
+               </optionSet>
+               <optionSequence id="components">
+                  <optionSet id="field">
+                     <option id="name">recordCategory</option>
+                     <option id="type">string</option>
+                     <option id="length">1</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">recordType</option>
+                     <option id="type">string</option>
+                     <option id="length">2</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">merchantId</option>
+                     <option id="type">string</option>
+                     <option id="length">4</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">reserved</option>
+                     <option id="type">string</option>
+                     <option id="length">27</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">periodFrom</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">periodTo</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">filler</option>
+                     <option id="type">string</option>
+                     <option id="length">350</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+               </optionSequence>
+            </optionSet>
+			
+            <optionSet id="section">
+                <optionSet id="general">
+                    <option id="name">data-record</option>
+                    <option id="recordName">data-record-row</option>
+                    <option id="recordSeparator">{crlf}</option>
+                    <compoundOption id="recordOwner">
+                        <option id="ownerType">xpath</option>
+                        <option id="xpath">fixedlen:peek-starts-with('X') or fixedlen:peek-starts-with('+') or fixedlen:peek-starts-with('-')</option>
+                    </compoundOption>
+                </optionSet>
+                <optionSequence id="components">
+					 
+					<optionSet id="section">			
+					   <optionSet id="general">
+						  <option id="name">XSI</option>
+						  <option id="recordName">XSI-row</option>
+						  <option id="recordSeparator"/>
+						  <compoundOption id="recordOwner">
+							 <option id="ownerType">xpath</option>
+							 <option id="xpath">fixedlen:peek-starts-with('XSI')</option>
+						  </compoundOption>
+					   </optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">10</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">319</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">80</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+					   </optionSequence>
+					</optionSet>			
+										
+					<optionSet id="section">			
+					   <optionSet id="general">
+						  <option id="name">XDI</option>
+						  <option id="recordName">XDI-row</option>
+						  <option id="recordSeparator"/>
+						  <compoundOption id="recordOwner">
+							 <option id="ownerType">xpath</option>
+							 <option id="xpath">fixedlen:peek-starts-with('XDI')</option>
+						  </compoundOption>
+					   </optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">10</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">rejectionReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">3</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">rejectionReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">273</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">80</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+					   </optionSequence>
+					</optionSet>				
+				
+                    <optionSet id="section">
+                        <optionSet id="general">
+                            <option id="name">plusIP</option>
+                            <option id="recordName">plusIP-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('+IP')</option>
+							</compoundOption>
+						</optionSet>				   
+						<optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">10</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">77</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">creditcardCompany</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">overUnderCurrencyLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">overUnderAmountLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">154</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+					   </optionSequence>
+					</optionSet>		
+					
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">minusIP</option>
+                            <option id="recordName">minusIP-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('-IP')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">10</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">77</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">creditcardCompany</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">171</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+					   </optionSequence>
+					</optionSet>			
+								
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">minusRI</option>
+                            <option id="recordName">minusRI-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('-RI')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">10</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateInvoice</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">69</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">creditcardCompany</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">68</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+					   </optionSequence>
+					</optionSet>	
+								
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">plusRI</option>
+                            <option id="recordName">plusRI-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('+RI')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">10</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateInvoice</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">69</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">creditcardCompany</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">68</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+					   </optionSequence>
+					</optionSet>	
+								
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">minusRF</option>
+                            <option id="recordName">minusRF-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('-RF')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">10</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateInvoice</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">69</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">creditcardCompany</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">76</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+					   </optionSequence>
+					</optionSet>									
+								
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">plusRF</option>
+                            <option id="recordName">plusRF-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('+RF')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">10</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceCurrencyLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceAmountLocal</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateInvoice</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">69</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">creditcardCompany</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">76</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>			
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+					   </optionSequence>
+					</optionSet>
+					
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">XAG</option>
+                            <option id="recordName">XAG-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('XAG')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">dateOrder</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">rejectionReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">3</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">rejectionReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">rejectionByIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountNumberDebtor</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">120</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+					   </optionSequence>
+					</optionSet>	
+										
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">XAB</option>
+                            <option id="recordName">XAB-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('XAB')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">dateOrder</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">rejectionReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">3</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">rejectionReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">rejectionByIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountNumberDebtor</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">226</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">countryCode</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentProduct</option>
+							 <option id="type">string</option>
+							 <option id="length">5</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">5</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">38</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+					   </optionSequence>
+					</optionSet>
+													
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">plusAP</option>
+                            <option id="recordName">plusAP-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('+AP')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">dateOrder</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">rejectionReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">3</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">rejectionReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">rejectionByIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">amountNumberDebtor</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">120</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+					   </optionSequence>
+					</optionSet>											
+													
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">XAP</option>
+                            <option id="recordName">XAP-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('XAP')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">dateOrder</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">29</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">accountNumberDebtor</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">120</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+					   </optionSequence>
+					</optionSet>											
+																					
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">minusAR</option>
+                            <option id="recordName">minusAR-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('-AR')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">dateOrder</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">29</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">accountNumberDebtor</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">68</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+					   </optionSequence>
+					</optionSet>					
+													
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">plusAR</option>
+                            <option id="recordName">plusAR-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('AR')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">dateOrder</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">29</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">accountNumberDebtor</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">14</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">68</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+					   </optionSequence>
+					</optionSet>					
+													
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">minusAF</option>
+                            <option id="recordName">minusAF-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('-AF')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">dateOrder</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">29</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">accountNumberDebtor</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">68</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+					   </optionSequence>
+					</optionSet>					
+													
+					<optionSet id="section">			
+                        <optionSet id="general">
+                            <option id="name">plusAF</option>
+                            <option id="recordName">plusAF-row</option>
+                            <option id="recordSeparator"/>
+                            <compoundOption id="recordOwner">
+                                <option id="ownerType">xpath</option>
+								<option id="xpath">fixedlen:peek-starts-with('+AF')</option>
+							</compoundOption>
+						</optionSet>
+					   <optionSequence id="components">
+						  <optionSet id="field">
+							 <option id="name">recordCategory</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">recordType</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentReference</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">invoiceNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">customerId</option>
+							 <option id="type">string</option>
+							 <option id="length">15</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">additionalReference</option>
+							 <option id="type">string</option>
+							 <option id="length">20</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">effortNumber</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountDeliv</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderCurrencyCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">orderAmountCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>					  
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">dateOrder</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">29</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">accountNumberDebtor</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">dateCollect</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentMethodId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">wbcPaymentProductId</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">6</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">paymentMethod</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">uncleanIndicator</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">paymentAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">currencyDue</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>		
+						  <optionSet id="field">
+							 <option id="name">amountDue</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">dateDue</option>
+							 <option id="type">string</option>
+							 <option id="length">8</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reserved</option>
+							 <option id="type">string</option>
+							 <option id="length">51</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundCurrency</option>
+							 <option id="type">string</option>
+							 <option id="length">4</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">refundAmount</option>
+							 <option id="type">string</option>
+							 <option id="length">12</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">amountSign</option>
+							 <option id="type">string</option>
+							 <option id="length">1</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonId</option>
+							 <option id="type">string</option>
+							 <option id="length">2</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>	
+						  <optionSet id="field">
+							 <option id="name">reversalReasonDesc</option>
+							 <option id="type">string</option>
+							 <option id="length">25</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				  
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">68</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+						  <optionSet id="field">
+							 <option id="name">moea</option>
+							 <option id="type">string</option>
+							 <option id="length">30</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>				
+						  <optionSet id="field">
+							 <option id="name">filler</option>
+							 <option id="type">string</option>
+							 <option id="length">50</option>
+							 <option id="alignment">left</option>
+							 <option id="padding">{space}</option>
+						  </optionSet>
+					   </optionSequence>
+					</optionSet>					
+																		
+                </optionSequence>
+            </optionSet>
+			
+            <optionSet id="section">
+               <optionSet id="general">
+                  <option id="name">information</option>
+                  <option id="recordName">information-row</option>
+                  <option id="recordSeparator">{crlf}</option>
+                  <compoundOption id="recordOwner">
+                     <option id="ownerType">xpath</option>
+                     <option id="xpath">fixedlen:peek-starts-with('ITM')</option>
+                  </compoundOption>
+               </optionSet>
+               <optionSequence id="components">
+                  <optionSet id="field">
+                     <option id="name">recordCategory</option>
+                     <option id="type">string</option>
+                     <option id="length">1</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">recordType</option>
+                     <option id="type">string</option>
+                     <option id="length">2</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">merchantId</option>
+                     <option id="type">string</option>
+                     <option id="length">4</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">reserved</option>
+                     <option id="type">string</option>
+                     <option id="length">217</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">currencyDue</option>
+                     <option id="type">string</option>
+                     <option id="length">4</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">total</option>
+                     <option id="type">string</option>
+                     <option id="length">12</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">amountSign</option>
+                     <option id="type">string</option>
+                     <option id="length">1</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">filler</option>
+                     <option id="type">string</option>
+                     <option id="length">159</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+               </optionSequence>
+            </optionSet>		
+			
+			
+            <optionSet id="section">
+               <optionSet id="general">
+                  <option id="name">batch-trailer</option>
+                  <option id="recordName">batch-trailer-row</option>
+                  <option id="recordSeparator">{crlf}</option>
+                  <compoundOption id="recordOwner">
+                     <option id="ownerType">fixedCount</option>
+                     <option id="recordCount">1</option>
+                  </compoundOption>
+               </optionSet>
+               <optionSequence id="components">
+                  <optionSet id="field">
+                     <option id="name">recordCategory</option>
+                     <option id="type">string</option>
+                     <option id="length">1</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">recordType</option>
+                     <option id="type">string</option>
+                     <option id="length">2</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">merchantId</option>
+                     <option id="type">string</option>
+                     <option id="length">4</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">reserved</option>
+                     <option id="type">string</option>
+                     <option id="length">27</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">periodFrom</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">periodTo</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfRecords</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfSentInvoices</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfRejectedInvoices</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfInvoicePayments</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCorrOnPayments</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfReversals</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCorrOnReversals</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfRefundOnPaidInvoice</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCorrOnRefundOnPaidInvoice</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfRejCardPayments</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCardRefunds</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCorrCardRefunds</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCollCardOnLine</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfRefusedSettlementOnline</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCollCardRefunds</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCollCardChargeBacks</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfWithdrawnChargebacks</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfRejCardOnLine</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCardPaymentsSendForSettlement</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCardPaymentsRefusedSettlements</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfRejectedRefundsOnCollectedCardPayments</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCollectedDirectDebitPayments</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfReversedDirectDebitPayments</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfRefundsDirectDebitPayments</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">numberOfCorrectionOnRefundsOnCollectedDirectDebitPayments</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">filler</option>
+                     <option id="type">string</option>
+                     <option id="length">150</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+               </optionSequence>
+            </optionSet>
+            <optionSet id="section">
+               <optionSet id="general">
+                  <option id="name">file-trailer</option>
+                  <option id="recordName">file-trailer-row</option>
+                  <option id="recordSeparator">{crlf}</option>
+                  <compoundOption id="recordOwner">
+                     <option id="ownerType">fixedCount</option>
+                     <option id="recordCount">1</option>
+                  </compoundOption>
+               </optionSet>
+               <optionSequence id="components">
+                  <optionSet id="field">
+                     <option id="name">recordCategory</option>
+                     <option id="type">string</option>
+                     <option id="length">1</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">recordType</option>
+                     <option id="type">string</option>
+                     <option id="length">2</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">accountId</option>
+                     <option id="type">string</option>
+                     <option id="length">4</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">filename</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">filenameExtension</option>
+                     <option id="type">string</option>
+                     <option id="length">3</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">dateProduction</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">serialNumber</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">periodFrom</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">periodTo</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">nrOfRecords</option>
+                     <option id="type">string</option>
+                     <option id="length">8</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+                  <optionSet id="field">
+                     <option id="name">filler</option>
+                     <option id="type">string</option>
+                     <option id="length">342</option>
+                     <option id="alignment">left</option>
+                     <option id="padding">{space}</option>
+                  </optionSet>
+               </optionSequence>
+            </optionSet>
+         </optionSequence>
+      </optionSet>
+   </optionSet>
+</model>
